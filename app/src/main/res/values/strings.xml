@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">android_primary_4_estureDetector</string>
+
+    <string name="gesture_detector">Gesture Detector</string>
+    <string name="gesture">Gesture Detector</string>
+
+</resources>
