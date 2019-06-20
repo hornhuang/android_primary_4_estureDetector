@@ -40,7 +40,7 @@ public class GestureDetectorActivity extends AppCompatActivity {
     }
 
     private void iniGestureListener(){
-        GestureDetector.SimpleOnGestureListener listener = new GestureDetector.SimpleOnGestureListener(){
+        final GestureDetector.SimpleOnGestureListener listener = new GestureDetector.SimpleOnGestureListener(){
             @Override
             public boolean onSingleTapConfirmed(MotionEvent e) {
                 MyToast.makeToast(GestureDetectorActivity.this, "single  click!");
@@ -64,7 +64,13 @@ public class GestureDetectorActivity extends AppCompatActivity {
             }
         };
 
-        detector = new GestureDetector(GestureDetectorActivity.this, listener);
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                detector = new GestureDetector(GestureDetectorActivity.this, listener);
+            }
+        };
     }
 
     public static void actionstart(Object activity){
